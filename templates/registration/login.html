@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            #rand{
+                flex-shrink: unset;
+                align-self: center;
+                position: relative;
+                z-index: 2;
+                margin-top: 20%;
+                margin-left: 34%;
+                margin-right: 30%;
+                border-radius: 20px;
+                justify-content: center;
+                box-shadow: 5cm;
+            }
+            .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 1;
+}
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  overflow: hidden;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+        </style>
+    </head>
+    {% block content%}
+<body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="https://r1---sn-8ph2xajvh-2xxl.googlevideo.com/videoplayback?initcwndbps=841250&pcm2cms=yes&expire=1556043133&c=WEB&ei=HQG_XMzSIIza7QSOy7jwAg&mime=video%2Fmp4&key=yt6&mt=1556021421&mv=m&ms=au%2Crdu&pl=24&id=o-ALfuX0svL6xtt-jyq2aMkH4JpKAtFqgbSwNQdIHXNktI&ipbits=0&ip=185.148.220.11&mm=31%2C29&itag=22&fvip=1&requiressl=yes&sparams=dur%2Cei%2Cid%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpcm2cms%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&source=youtube&mn=sn-8ph2xajvh-2xxl%2Csn-ug5onuxaxjvh-n8v6&lmt=1471746586363103&dur=251.425&ratebypass=yes&signature=1539C615720CAF9E782EB9AEF70A82BD03B73376.2357D34D0EB9980607341558C71499F1BBBDCF75&video_id=U1myixlTLNw&title=Sports+Beauty+-+Slow+Motion" type="video/mp4">
+        <!--Video grabbed from https://www.youtube.com/watch?v=U1myixlTLNw&t=33s-->
+          </video>
+        <span class="align-middle">
+        <div class="d-flex justify-content-center bg-dark text-white" id="rand">
+            <div class="d-flex flex-column">   
+                <div class="d-flex justify-content-center"><h2>Login</h2></div>
+                <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-center"><button type="submit">Login</button></div>
+                </form>
+            </div>
+            </div>
+    </span>
+            </html>
+            {%endblock%}
