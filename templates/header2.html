@@ -1,0 +1,166 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #34495e;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{%load static%}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="header">
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-left">
+    <a class="active" href="#home">Home</a>
+    <a href="#work">   work</a>
+    <a href="#blog">blog</a>
+	<a href="#contact">contact</a>
+	
+  </div>
+ 
+	 <div class="header-right">	<a class="active" href="#login">
+	Login
+			<i class="fa fa-lock" style="font-size:24px"></i>
+		</a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <div class="d-flex justify-content-center bg-white" id="rand">
+                  <span class="border border-info rounded">
+      <div class="d-flex flex-column">   
+
+          <div class="d-flex justify-content-center"><h2>Who are you?</h2></div>
+                  <div class="table-wrapper">
+                          <table class="tab1" border="1">
+                                  <tr>
+                                  <th>
+                                          Game Name
+                                  </th><th>Referee</th><th>Game Owner</th><th>Player 1</th>
+                                  <th>Player 2</th><th>Player 3</th><th>Player 4</th><th>Player 5</th><th>Player 6</th><th>Player 7</th><th>Player 8</th>
+                                  <th>Player 9</th><th>Player 10</th><th>Player 11</th><th>Player 12</th><th>Player 13</th>
+                                  <th>Round1 Date</th><th>Round2 Date</th><th>Round3 Date</th><th>Winner</th><th>Runner Up</th><th>2nd Runner Up</th>
+                          </tr>
+                                  {% for inst in objects %}
+                                  {%for inst1 in objects2%}
+                                  {%if inst.Owner.username == inst1.username.username%}
+                                  <tr>
+                                          <td>
+                                                  {{inst.GameName}}
+                                          </td>
+                                          <td>
+                                                  {{inst.Referee}}
+                                          </td>
+                                          <td>
+                                                  {{inst.Owner}}
+                                          </td>
+                                          <td>
+                                                  {{inst1.player1.name}}
+                                          </td>
+                                          <td>
+                                                  {{inst1.player2.name}}
+                                          </td><td>
+                                                  {{inst1.player3.name}}
+                                          </td><td>
+                                                  {{inst1.player4.name}}
+                                          </td><td>
+                                                  {{inst1.player5.name}}
+                                          </td><td>
+                                                  {{inst1.player6.name}}
+                                          </td><td>
+                                                  {{inst1.player7.name}}
+                                          </td><td>
+                                                  {{inst1.player8.name}}
+                                          </td><td>
+                                                  {{inst1.player9.name}}
+                                          </td><td>
+                                                  {{inst1.player10.name}}
+                                          </td><td>
+                                                  {{inst1.player11.name}}
+                                          </td><td>
+                                                  {{inst1.player12.name}}
+                                          </td><td>
+                                                  {{inst1.player13.name}}
+                                          </td>
+                                          <td>
+                                                  {{inst1.round1_date}}
+                                          </td>
+                                          <td>
+                                                  {{inst1.round2_date}}
+                                          </td><td>
+                                                  {{inst1.round3_date}}
+                                          </td>
+                                          <td>
+                                                  {{inst1.winner.name}}
+                                          </td>
+                                          <td>
+                                                  {{inst1.runner.name}}
+                                          </td><td>
+                                                  {{inst1.runner2.name}}
+                                          </td>
+                                  </tr>
+                                  {%endif%}
+                                  {%endfor%}
+                                  {%endfor%}
+                          </table>
+                  </div>
+      </div>
+                  </span>
+      </div>
+</body>
+</html>

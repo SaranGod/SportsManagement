@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from form_app.views import form_view,form_enter
+from form_app.views import form_view,home_view
+
+admin.site.site_header = "Sports Management System Admin "
+admin.site.site_title = "Admin Page "
 
 urlpatterns = [
     path("enter/list/",form_view),
-    path("enter/",form_enter),
+    #path("enter/",form_enter),
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
+    #path('', include('django.contrib.auth.urls'),  {'template_name': 'registration/login.html'}),
+    #path('gameowner/', include('django.contrib.auth.urls'),  {'template_name': 'registration/login1.html'}),
+    path('',home_view)
 ]
