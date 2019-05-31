@@ -41,8 +41,8 @@ color: white;
 }
 .table-wrapper
 {
-    height: device-height;
-    width: device-width;
+    height: max-content;
+    width: max-content;
     overflow: auto;
 }
 
@@ -50,6 +50,8 @@ table
 {
     border: 1px solid black;
     margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 td
 {
@@ -62,7 +64,10 @@ th{
     background-color: #417690;
     color:white;
 }
-
+.border{
+    height: max-content;
+    width: max-content;
+}
 .navbar-brand{
     color:white;
 }

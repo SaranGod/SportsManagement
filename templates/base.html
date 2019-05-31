@@ -40,13 +40,13 @@
                                         {%for inst1 in objects2%}
                                         {%if inst.Owner.username == inst1.username.username%}
                                         <tr>
-                                                <td>
+                                                <td rowspan="2">
                                                         {{inst1.sport}}
                                                 </td>
-                                                <td>
+                                                <td rowspan="2">
                                                         {{inst.Referee}}
                                                 </td>
-                                                <td>
+                                                <td rowspan="2">
                                                         {{inst.Owner}}
                                                 </td>
                                                 <td>
@@ -73,21 +73,47 @@
                                                 </td><td>
                                                         {{inst1.player11.name}}
                                                 </td>
-                                                <td>
+                                                
+                                                <td rowspan="2">
                                                         {{inst1.round1_date}}
                                                 </td>
-                                                <td>
+                                                <td rowspan="2">
                                                         {{inst1.round2_date}}
-                                                </td><td>
+                                                </td><td rowspan="2">
                                                         {{inst1.round3_date}}
-                                                </td>
-                                                <td>
+                                                </td >
+                                                <td rowspan="2">
                                                         {{inst1.winner.name}}
                                                 </td>
-                                                <td>
+                                                <td rowspan="2">
                                                         {{inst1.runner.name}}
-                                                </td><td>
+                                                </td><td rowspan="2">
                                                         {{inst1.runner2.name}}
+                                                </td>
+                                        </tr><tr>
+                                                <td>
+                                                        {{inst1.playerb1.name}}
+                                                </td>
+                                                <td>
+                                                        {{inst1.playerb2.name}}
+                                                </td><td>
+                                                        {{inst1.playerb3.name}}
+                                                </td><td>
+                                                        {{inst1.playerb4.name}}
+                                                </td><td>
+                                                        {{inst1.playerb5.name}}
+                                                </td><td>
+                                                        {{inst1.playerb6.name}}
+                                                </td><td>
+                                                        {{inst1.playerb7.name}}
+                                                </td><td>
+                                                        {{inst1.playerb8.name}}
+                                                </td><td>
+                                                        {{inst1.playerb9.name}}
+                                                </td><td>
+                                                        {{inst1.playerb10.name}}
+                                                </td><td>
+                                                        {{inst1.playerb11.name}}
                                                 </td>
                                         </tr>
                                         {%endif%}
